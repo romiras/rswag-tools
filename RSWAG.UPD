@@ -1,0 +1,4 @@
+{--- Russian SWAG Update Name ---}
+Const
+   UpdateName:String[8] = 'RSWAG97';
+   UpdatePeriod: String[8] = '1997';

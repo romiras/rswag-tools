@@ -1,0 +1,19 @@
+<html><head><title>$AREADESCR$ - Pascal.Sources.Ru</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta name="description" content="Коллекция исходников на Паскале.&#10; Раздел - $AREADESCR$.">
+<meta name="keywords" content="pascal, sources, source, code, free, $AREALOW$, $AREADESCR$ ">
+<LINK REL=STYLESHEET TYPE="text/css" HREF="../sources.css"></head><BODY><center>
+<!--#include virtual="/t_hmenu2.htm"-->
+
+<TD class=silver width=35%> <!--#exec cgi="/cgi-bin/onetimep.cgi" --> </TD></TR></TABLE></TD></TR></TABLE></FORM>
+
+<TABLE cellSpacing=0 cellpadding=5 width=97% border=0>
+<tr><td valign='top' width=200>
+
+<!--#include virtual="/t_lmenu2.htm"-->
+<td valign='top'>
+<div class='title'>$AREADESCR$
+<br><img border=0 height=4 width=50% align='top' src="../img/b.gif" alt="">
+<br><br></div>
+
+<TABLE cellSpacing=0 cellpadding=0 width=100% border=0>$PAGE$

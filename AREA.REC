@@ -1,0 +1,8 @@
+<TR class=subheader><TD colSpan=2><IMG height=2 src="../img/1x1.gif" width=1></td></tr>
+<TR><TD class=subheader width=90% nowrap>&nbsp;$MORE$$SUBJ$</A></TD>
+<TD nowrap class=black>&nbsp;<img border=0 align=bottom src="../img/mail.gif">&nbsp;<A href="mailto:$ADDR$">$FROM$</A></TD>
+</TR><TR vALign=top><TD class=black><p style="margin-left:20px">$ABOUT$
+$MOREINFO$</TD>
+<TD class=black align='right'>$DATE$<br >
+$DOWNLOAD$</TD></TR>
+<TR><TD>&nbsp</TD></TR>
