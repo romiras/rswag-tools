@@ -3,7 +3,7 @@
 {      for    Russian SWAG Msg Base Reader                 }
 {                    v.4.0 beta H                          }
 {      written 1993-2000 by Valery Votintsev 2:5021/22     }
-{                             E-Mail: rswag@sources.ru     }
+{                          E-Mail: rswag AT sources.ru     }
 {----------------------------------------------------------}
 unit vMemo;
 {$I GSF_FLAG.PAS}
@@ -25,7 +25,7 @@ uses
 Const
    MaxMemoSize   = $FFF0;
    MaxMemoSize2  = $FFF2;
-   CutLine   : String[ 9] ='˛˛˛˛˛˛˛˛˛';
+   CutLine   : String[ 9] ='‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†‚ñ†';
    CutLine2  : String[20] ='Cut here. FileName= ';
 
 type
@@ -202,12 +202,12 @@ begin
    If l + Memo_Size > MaxMemoSize then begin
       Beep;
       WaitForOk('Memo too big to insert chars !','Ok',LightGray*16,Cyan*16)
-      {!!! è‡•§´Æ¶®‚Ï ‡†ß°®‚Ï ≠† ≠•·™Æ´Ï™Æ ·•™Ê®©!!!}
+      {!!! –ü—Ä–µ–¥–ª–æ–∂–∏—Ç—å —Ä–∞–∑–±–∏—Ç—å –Ω–∞ –Ω–µ—Å–∫–æ–ª—å–∫–æ —Å–µ–∫—Ü–∏–π!!!}
    end else begin
-      for j:=Pred(Memo_Size) downto p do  {ë§¢®≠„‚Ï ï¢Æ·‚ Memo ¢Ø‡†¢Æ}
+      for j:=Pred(Memo_Size) downto p do  {–°–¥–≤–∏–Ω—É—Ç—å –•–≤–æ—Å—Ç Memo –≤–ø—Ä–∞–≤–æ}
          memo^[j+l]:=memo^[j];
 
-      {¢·‚†¢®‚Ï ≠†Ë„ ·‚‡Æ™„ ¢ Æ·¢Æ°Æ¶§•≠≠Æ• ¨•·‚Æ}
+      {–≤—Å—Ç–∞–≤–∏—Ç—å –Ω–∞—à—É —Å—Ç—Ä–æ–∫—É –≤ –æ—Å–≤–æ–±–æ–∂–¥–µ–Ω–Ω–æ–µ –º–µ—Å—Ç–æ}
       move(S[1], memo^[p], Length(S));  {Put the string to Memo  }
       Inc(Memo_Size,Length(S));         {Increase Memo_Size}
 
@@ -321,12 +321,12 @@ begin
 
   While (crs < Memo_Size) do begin
 {    crs := scanCrDn(crs);}
-    If (Memo^[crs]='{') and  (Memo^[crs+1]='˛') then begin
+    If (Memo^[crs]='{') and  (Memo^[crs+1]='‚ñ†') then begin
        Memo^[crs+1]:='>';
        MemoUpdated:=True;
     end else begin
-       If (Memo^[crs]='˛') and  (Memo^[crs+1]='>')  and  (Memo^[crs+2]='}') then begin
-          Memo^[crs+1]:='˛';
+       If (Memo^[crs]='‚ñ†') and  (Memo^[crs+1]='>')  and  (Memo^[crs+2]='}') then begin
+          Memo^[crs+1]:='‚ñ†';
        MemoUpdated:=True;
        end;
     end;
@@ -350,7 +350,7 @@ begin
 
   While (crs < Memo_Size) do begin
     crs := scanCrDn(crs);
-    If (Memo^[crs-1]=K_LF) and  (Memo^[crs-2]='ç') then begin
+    If (Memo^[crs-1]=K_LF) and  (Memo^[crs-2]='–ù') then begin
        Dec(crs,2);
        DelChar;
        DelChar;
@@ -390,7 +390,7 @@ var
 begin
    OldColor:=TextAttr;
    SetColor('B+/N');
-   SAY(75,5,'ƒƒƒƒƒ');
+   SAY(75,5,'‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ');
    TextAttr:=OldColor;
 end;
 
@@ -418,7 +418,7 @@ begin
 
    SetColor('W/N');
    SAY(x, 2,'Area Keys                                        Reader Help');
-   SAY(x, 3,'ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ');
+   SAY(x, 3,'‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ');
 
    SAY(x, 5,'Home, C-PgUp  Move selection bar to first area');
    SAY(x, 6,'End,  C-PgDn  Move selection bar to last area');
@@ -443,7 +443,7 @@ begin
    SAY(74,1,' Help ');
    SetColor('W/N');
    SAY(x, 2,'Message Lister Keys                              Reader Help');
-   SAY(x, 3,'ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ');
+   SAY(x, 3,'‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ');
 
    SAY(x, 5,'Esc            Abort message lister');
    SAY(x, 6,'Home, C-PgUp   First message');
@@ -498,9 +498,9 @@ begin
    Box(1,1,80,24,Single,NoShadow);
    SAY(2,24,' ESC ');
 
-   If    ScreenNum = 1       then SAY(69,24,'ƒƒƒƒƒ PgDn ')
+   If    ScreenNum = 1       then SAY(69,24,'‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ PgDn ')
    else
-      If ScreenNum = LastNum then SAY(69,24,'ƒƒƒƒƒ PgUp ')
+      If ScreenNum = LastNum then SAY(69,24,'‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ PgUp ')
    else                           SAY(69,24,' PgUp/PgDn ');
 
    If MemoEditOn then begin
@@ -508,7 +508,7 @@ begin
      SAY(74,1,' Help ');
      SetColor('W/N');
      SAY(x, 2,'Internal Editor Cursor Movements                 Editor Help');
-     SAY(x, 3,'ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ');
+     SAY(x, 3,'‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ');
 {    SAY(x, 4,'');}
    Case ScreenNum of
    1:begin
@@ -576,7 +576,7 @@ begin
    SAY(74,1,' Help ');
    SetColor('W/N');
    SAY(x, 2,'Reader Keys                                      Reader Help');
-   SAY(x, 3,'ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ');
+   SAY(x, 3,'‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ');
 
    Case ScreenNum of
    1:begin
@@ -653,7 +653,7 @@ end;
 
 *)
 
-{*ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ*}
+{*‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ*}
 Procedure UUEncode(InFileName,OutFileName:String);
 Const
   SP = Byte(' ');
@@ -1237,7 +1237,7 @@ Function FormCutter(const fname:String):string80;
 var cLine:string80;
 begin
   cLine := '{>'+CutLine+' '+CutLine2+UPPER(FName)+' ';
-  cLine := cLine+ Replicate('˛',77-Length(cLine))+'}'+CRLF;
+  cLine := cLine+ Replicate('‚ñ†',77-Length(cLine))+'}'+CRLF;
   FormCutter := cLine;
 end;
 
@@ -1291,7 +1291,7 @@ begin
          If l+80+ Memo_Size > MaxMemoSize then begin
             Beep;
             WaitForOk('File "'+FileName+'" too big!','Ok',LightGray*16,Cyan*16)
-            {!!! è‡•§´Æ¶®‚Ï ‡†ß°®‚Ï ≠† ≠•·™Æ´Ï™Æ ·•™Ê®©!!!}
+            {!!! –ü—Ä–µ–¥–ª–æ–∂–∏—Ç—å —Ä–∞–∑–±–∏—Ç—å –Ω–∞ –Ω–µ—Å–∫–æ–ª—å–∫–æ —Å–µ–∫—Ü–∏–π!!!}
          end else begin
             MemoRead(TmpFileName,Memo_Pack,l);
             If IsBinary then
@@ -1430,12 +1430,12 @@ begin
                        end;                            {                 }
 *)
       K_F3,
-      K_Alt_H      : begin {Remove 'ç-LF'    }
+      K_Alt_H      : begin {Remove '–ù-LF'    }
                         RemoveSoftCR;
                         If MemoUpdated then
                            SetCursorOn;
                      end;
-      K_Alt_K      : begin {Remove 'ç-LF'    }
+      K_Alt_K      : begin {Remove '–ù-LF'    }
                         ChangeCutters;
                         If MemoUpdated then
                            SetCursorOn;

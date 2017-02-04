@@ -2,7 +2,7 @@
 {Menu Unit for Russian SWAG Reader}
 {---------------------------------}
 {written 1996-2000 by Valery Votintsev 2:5021/22}
-{                  E-Mail: rswag@sources.ru     }
+{                  E-Mail: rswag AT sources.ru     }
 {corrected 29/09/2000 for Windows NT by
  Alexander Grischenko <gralex@mailbox.riga.lv>}
 
@@ -431,7 +431,7 @@ BEGIN
    SAY(X,Row,Message);
 END;
 
-{*ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ*}
+{*‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ*}
 Function AskYesNo(x1,y1:byte;Title:string):Boolean;
 { Yes - No Menu }
 Var
@@ -569,8 +569,8 @@ begin
 
 {AG: ==>}
 { if NT presents, then start drive checking from C:, not from A: }
-{ ·™†≠®‡Æ¢†≠®• §®·™Æ¢ ¢ ·´„Á†• · çí ≠†Á®≠†•‚·Ô · ë:, 
-  † A ® B ¢ Ì‚Æ¨ ·´„Á†• ≠†§Æ Ø‡Æ·‚Æ ØÆ¨•‚®‚Ï ™†™ Ø‡®·„‚·‚¢„ÓÈ®•}
+{ —Å–∫–∞–Ω–∏—Ä–æ–≤–∞–Ω–∏–µ –¥–∏—Å–∫–æ–≤ –≤ —Å–ª—É—á–∞–µ —Å –ù–¢ –Ω–∞—á–∏–Ω–∞–µ—Ç—Å—è —Å –°:, 
+  –∞ A –∏ B –≤ —ç—Ç–æ–º —Å–ª—É—á–∞–µ –Ω–∞–¥–æ –ø—Ä–æ—Å—Ç–æ –ø–æ–º–µ—Ç–∏—Ç—å –∫–∞–∫ –ø—Ä–∏—Å—É—Ç—Å—Ç–≤—É—é—â–∏–µ}
    if CheckNT then begin
       DriveTable[0] := 'P';   {Assume that Drive 'A' presents}
       DriveTable[1] := 'P';   {Assume that Drive 'B' presents}

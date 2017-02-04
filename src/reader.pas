@@ -4,7 +4,7 @@
 {             Russian SWAG Msg Base Reader                 }
 {                       v.4.1                              }
 {      written 1993-2000 by Valery Votintsev 2:5021/22     }
-{                             E-Mail: rswag@sources.ru     }
+{                          E-Mail: rswag AT sources.ru     }
 {----------------------------------------------------------}
 {$M 64565, 0, 655000}
 {$I GSF_FLAG.PAS}

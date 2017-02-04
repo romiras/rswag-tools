@@ -1,0 +1,157 @@
+Visual FoxPro uses tables to store data that defines different file types.
+The file types that are saved as table files are:
+
+•	Table (.DBF)
+•	Database (.DBC)
+•	Form (.SCX)
+•	Label (.LBX)
+•	Menu (.MNX)
+•	Project (.PJX)
+•	Report (.FRX)
+•	Visual Class Library (.VCX)
+
+     Because these files are actually tables, you can use and browse them in
+the same way that you browse any .DBF file.  A table file is made up of a
+header record and data records. The header record defines the structure of
+the table and contains any other information related to the table. It starts
+at file position zero. The data records (1)  follow the header (in
+consecutive bytes) and contain the actual text of the fields.  For
+information about the table structures of the different file types, see Table
+Structures of Table Files.  The length of a record (in bytes) is determined
+by summing the defined lengths of all fields. Integers in table files are
+stored with the least significant byte first.
+
+Table Header Record Structure
+
+Byte offset	Description
+0               Type of file
+                0x02    FoxBASE
+                0x03    FoxBASE+/dBASE III PLUS, no memo
+                0x30    Visual FoxPro
+                0x43    dBASE IV SQL table files, no memo
+                0x63    dBASE IV SQL system files, no memo
+                0x83    FoxBASE+/dBASE III PLUS, with memo
+                0x8B    dBASE IV with memo
+                0xCB    dBASE IV SQL table files, with memo
+                0xF5    FoxPro 2.x (or earlier) with memo
+                0xFB    FoxBASE
+1 to 3          Last update (YYMMDD)
+4 to 7          Number of records in file
+8 to 9          Position of first data record
+10 to 11	Length of one data record (including delete flag)
+12 to 27	Reserved
+28              Table Flags
+                0x01    file has a production .MDX
+                0x02    file has Memos
+                0x04    file is a Database (.DBC)
+29              Code page mark
+30 to 31	Reserved, contains 0x00
+32 to n         Field subrecords
+
+The number of fields determines the number of field subrecords. There is one
+field subrecord for each field in the table.
+
+n+1             Header record terminator (0x0D)
+n+2 to n+264    A 263-byte range that contains the backlink information (the
+                relative path of an associated database (.DBC)). If the first
+                byte is 0x00 then the file is not associated with a database.
+                Hence, database files themselves always contain 0x00.
+
+ (1)  The data in the data file starts at the position indicated in bytes 8
+to 9 of the header record. Data records begin with a delete flag byte. If
+this byte is an ASCII space (0x20) the record is not deleted; if the first
+byte is an asterisk (0x2A) the record is deleted. The data from the fields
+named in the field subrecords follows the delete flag.
+
+Field Subrecords Structure
+
+Byte offset	Description
+0 to 10         Field name (maximum of 10 characters ? if less than 10 it is
+                padded with null character (0x00))
+
+11              Field Type:
+                C       -       Character
+                Y       -       Currency
+                N       -       Numeric
+                F       -       Float
+                D       -       Date
+                T       -       DateTime
+                B       -       Double
+                I       -       Integer
+                L       -       Logical
+                M       -       Memo
+                G       -       General
+                C       -       Character (binary)
+                M       -       Memo (binary)
+                P       -       Picture
+
+12 to 15        Displacement of field in record
+16              Length of field (in bytes)
+17              Number of decimal places
+18              Field Flags
+                0x01     System Column (not visible to user)
+                0x02    Column can store null values
+                0x04    Binary column (for CHAR and MEMO only)
+19 to 32	Reserved
+
+For information about limitations on chatacters per record, maximum fields,
+etc., see Visual FoxPro System Capacities.
+
+Remarks
+
+Visual FoxPro version 3.0 does not modify the header of a file that has been
+saved to a FoxPro 2.  x file format unless any of the following features have
+been added to the file:
+
+•	Null value support
+•	DateTime, Currency, and Double data types
+•	CHAR or MEMO field is marked as Binary
+•	A table is added to a database (.DBC) file
+
+Tip  You can use the following formula to return the number of fields in a
+table file:
+                (x - 296/32)
+
+where:
+x = The position of the first record (bytes 8 to 9 in the table header
+record) 296 = 263 (backlink info) + 1 (header record terminator) + 32 (first
+field subrecord) 32 = Length of a field subrecord
+
+
+
+
+            MEMO - FILE STRUCTURE (.FPT)
+
+Memo files contain one header record and any number of block structures. The
+header record contains a pointer to the next free block and the size of the
+block in bytes. The size is determined by the SET BLOCKSIZE command when the
+file is created. The header record starts at file position zero and occupies
+512 bytes. The SET BLOCKSIZE TO 0 command sets the block size width to 1.
+
+Following the header record are the blocks that contain a block header and
+the text of the memo. The table file contains block numbers that are used to
+reference the memo blocks. The position of the block in the memo file is
+determined by multiplying the block number by the block size (found in the
+memo file header record). All memo blocks start at even block boundary
+addresses. A memo block can occupy more than one consecutive block.
+
+Memo Header Record
+
+Byte offset	Description
+00-03           Location of next free block  (1)
+04-05           Unused
+06-07           Block size (bytes per block)  (1)
+08-511          Unused
+
+ (1 ) Integers stored with the most significant byte first.
+
+Memo Block Header and Memo Text
+
+Byte offset	Description
+00-03           Block signature (1) (indicates the type of data in the block)
+                a.      0 - picture (picture field type)
+                b.      1 - text (memo field type)
+04-07           Length  (1)  of memo (in bytes)
+08-n            Memo text (n = length)
+
+ (1 ) Integers stored with the most significant byte first.

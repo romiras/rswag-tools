@@ -3,7 +3,7 @@
 {                    v.4.0 beta H                          }
 {      Unit Reader_U - User Interface utilities            }
 {      written 1993-2000 by Valery Votintsev 2:5021/22     }
-{                             E-Mail: rswag@sources.ru     }
+{                          E-Mail: rswag AT sources.ru     }
 {----------------------------------------------------------}
 Unit Reader_U;
 {$i GSF_FLAG.PAS}
@@ -181,7 +181,7 @@ var
    cExt:string;
    FileOpened,
    UuStarted,
-   ItIsUUE:Boolean; { à¨§­ ª UUEncoded Stuff }
+   ItIsUUE:Boolean; { ĞŸÑ€Ğ¸Ğ·Ğ½Ğ°Ğº UUEncoded Stuff }
 begin
 {   If AskNeed then begin}
       OldScreen:=SaveScreen;
@@ -195,7 +195,7 @@ begin
    cLine:='';
    UuStarted:=False;
    FileOpened:=False;
-   ItIsUUE:=False; { à¨§­ ª UUEncoded Stuff}
+   ItIsUUE:=False; { ĞŸÑ€Ğ¸Ğ·Ğ½Ğ°Ğº UUEncoded Stuff}
 
    If AskNeed then begin
       ExtractDir:=EditBoxString(8,13,70,15,ExtractDir,'Extract to the Directory:','',NotConvert);
@@ -388,8 +388,8 @@ begin
    SetColor('W/B');
    ClearLine(25);
    SAY(Length(S)+2,25, CopyRight);
-   SAY(47,25,'³ OrderBy:');
-   SAY(70,25,'³');
+   SAY(47,25,'â”‚ OrderBy:');
+   SAY(70,25,'â”‚');
 
    SetColor('W+/B');
    SAY(1,25,S);
@@ -450,7 +450,7 @@ end;
 
 
 
-{*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*}
+{*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*}
 Procedure Browse ({AreaID:String12;AreaDesc:String80;}
                   ColLeft,RowTop,ColRight,RowBottom:byte;
                   cTitle:String80;EnterExit:Boolean);
@@ -707,7 +707,7 @@ begin
       Say_Char(SepPos-1, y,' ');
       If Alias <> 'AREAS' then
          If LogicGet('NEW') then
-            Say_Char(SepPos-1,y, 'û');
+            Say_Char(SepPos-1,y, 'âˆš');
 
    end;
 
@@ -750,7 +750,7 @@ begin
       end
    else begin
       SetColor('B+/N');
-      SAY(1, 1, Replicate('Ä',80));
+      SAY(1, 1, Replicate('â”€',80));
 
       SetColor('GR+/N');
       SAY(2,1,' ' + AreaDescr+' ');
@@ -768,7 +768,7 @@ End;
 
 {***********************************************************************}
 Procedure DrawRecord;
-{ ÄÄÄÄ Draw the Record to Full Screen ÄÄÄÄ }
+{ â”€â”€â”€â”€ Draw the Record to Full Screen â”€â”€â”€â”€ }
 {Var
    cID:PathStr;
    nLen:byte Absolute cId;
@@ -783,8 +783,8 @@ begin
 
    SetColor('B+/N');
    Box(1,1,80,5,NoFrame,NoShadow);
-   SAY(1,1, Replicate('Ä',80));
-   SAY(1,5, Replicate('Ä',80));
+   SAY(1,1, Replicate('â”€',80));
+   SAY(1,5, Replicate('â”€',80));
 
    SetColor('GR+/N');
    SAY(2,1,' '+ AreaDescr {cArea} +' ');
@@ -807,7 +807,7 @@ end;
 
 {***********************************************************************}
 Procedure DrawHeader;
-{ ÄÄÄÄ Draw the Record Header to Full Screen ÄÄÄÄ }
+{ â”€â”€â”€â”€ Draw the Record Header to Full Screen â”€â”€â”€â”€ }
 
 begin
 
@@ -834,7 +834,7 @@ begin
 
    If FieldExists('PROJECT') then begin  {Skip this if old DBF format}
       SetColor('B+/N');
-      SAY(52,5, 'ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ');
+      SAY(52,5, 'â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€');
       SetColor('W/N');
       If AllTrim(FieldGet('PROJECT')) <> '' then begin
          SAY(59, 5, '[            ]');
@@ -848,7 +848,7 @@ begin
    end;
 
    SetColor('B+/N');
-   SAY(2,5, 'ÄÄÄÄÄÄÄÄÄÄ');
+   SAY(2,5, 'â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€');
    SetColor('GR+/N');
    SAY(2,5,IntToStr(Memo_Size));     {Say the Message Length}
 {
@@ -1101,9 +1101,9 @@ Begin
                         ' Enter MsgNo ','Msg :  ',NotConvert);
    end;
 {
-ÚÄÄÄÄ Enter msgno ÄÄÄÄ¿
-³ Msg  : °°°°° of 293 ³
-ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+â”Œâ”€â”€â”€â”€ Enter msgno â”€â”€â”€â”€â”
+â”‚ Msg  : â–‘â–‘â–‘â–‘â–‘ of 293 â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
 }
    If LastKey<>K_ESC then begin
       OldRec := RecNo;
@@ -1571,7 +1571,7 @@ end;
 
 {**********************************************************************}
 Procedure PackDataBase;
-{ ¥à¥¯ ª®¢ âì  §ã „ ­­ëå (ã¡à âì ã¤ «¥­­ë¥ § ¯¨á¨) }
+{ ĞŸĞµÑ€ĞµĞ¿Ğ°ĞºĞ¾Ğ²Ğ°Ñ‚ÑŒ Ğ‘Ğ°Ğ·Ñƒ Ğ”Ğ°Ğ½Ğ½Ñ‹Ñ… (ÑƒĞ±Ñ€Ğ°Ñ‚ÑŒ ÑƒĞ´Ğ°Ğ»ĞµĞ½Ğ½Ñ‹Ğµ Ğ·Ğ°Ğ¿Ğ¸ÑĞ¸) }
 {----------------------------------}
 var
   n:longint;
@@ -1601,7 +1601,7 @@ end;
 
 {**********************************************************************}
 Procedure MoveRecords;
-{ ¥à¥¬¥áâ¨âì ‘®®¡é¥­¨¥ (¨«¨ ¢ë¤¥«¥­­ë¥ ) ¢ ¤àã£ãî ¡ §ã }
+{ ĞŸĞµÑ€ĞµĞ¼ĞµÑÑ‚Ğ¸Ñ‚ÑŒ Ğ¡Ğ¾Ğ¾Ğ±Ñ‰ĞµĞ½Ğ¸Ğµ (Ğ¸Ğ»Ğ¸ Ğ²Ñ‹Ğ´ĞµĞ»ĞµĞ½Ğ½Ñ‹Ğµ ) Ğ² Ğ´Ñ€ÑƒĞ³ÑƒÑ Ğ±Ğ°Ğ·Ñƒ }
 {----------------------------------}
 Const
    ScaleMsg: String[34] ='Wait a minute! It''s copying now...';
@@ -1622,7 +1622,7 @@ var
    MoveIt    :Boolean;
 begin
 
- If Alias = 'WORK' then begin  { ¯¥à æ¨ï ¢®§¬®¦­  â®«ìª® ¨§ Msg List }
+ If Alias = 'WORK' then begin  { ĞĞ¿ĞµÑ€Ğ°Ñ†Ğ¸Ñ Ğ²Ğ¾Ğ·Ğ¼Ğ¾Ğ¶Ğ½Ğ° Ñ‚Ğ¾Ğ»ÑŒĞºĞ¾ Ğ¸Ğ· Msg List }
    SaveColor(OldColor);
    OldScreen:=SaveScreen;
 
@@ -1801,7 +1801,7 @@ end;
 
 {--------------------------------------------------------------}
 Procedure FindNextRecord;
-{ H å®¤¨â ¢ ¡ §¥ á«¥¤ãîéãî § ¯¨áì }
+{ HĞ°Ñ…Ğ¾Ğ´Ğ¸Ñ‚ Ğ² Ğ±Ğ°Ğ·Ğµ ÑĞ»ĞµĞ´ÑƒÑÑ‰ÑƒÑ Ğ·Ğ°Ğ¿Ğ¸ÑÑŒ }
 var
    n,m,nr:word;
    OldScreen:ScreenPtr;
@@ -1914,7 +1914,7 @@ end;
 
 {*******************************************************************}
 Procedure FindInHeaders;
-{ H å®¤¨â ¢ § £®«®¢ª¥ ¨ ¯®ª §ë¢ ¥â ­ã¦­ãî § ¯¨áì }
+{ HĞ°Ñ…Ğ¾Ğ´Ğ¸Ñ‚ Ğ² Ğ·Ğ°Ğ³Ğ¾Ğ»Ğ¾Ğ²ĞºĞµ Ğ¸ Ğ¿Ğ¾ĞºĞ°Ğ·Ñ‹Ğ²Ğ°ĞµÑ‚ Ğ½ÑƒĞ¶Ğ½ÑƒÑ Ğ·Ğ°Ğ¿Ğ¸ÑÑŒ }
 begin
    FindText:=False;
    GetFindString;       { Get Search string }
@@ -1927,7 +1927,7 @@ end; { FindRecords }
 
 {*******************************************************************}
 Procedure FindRecords;
-{ H å®¤¨â ¢ ¡ §¥ ¨ ¯®ª §ë¢ ¥â ­ã¦­ãî § ¯¨áì }
+{ HĞ°Ñ…Ğ¾Ğ´Ğ¸Ñ‚ Ğ² Ğ±Ğ°Ğ·Ğµ Ğ¸ Ğ¿Ğ¾ĞºĞ°Ğ·Ñ‹Ğ²Ğ°ĞµÑ‚ Ğ½ÑƒĞ¶Ğ½ÑƒÑ Ğ·Ğ°Ğ¿Ğ¸ÑÑŒ }
 begin
    If Alias = 'AREAS' then
       FindText:=false
@@ -2087,7 +2087,7 @@ var
       end;
 
       IF System.IoResult <> 0 then begin
-         { "è¨¡ª  § ¯¨á¨ ¢ ä ©«!" }
+         { "ĞÑˆĞ¸Ğ±ĞºĞ° Ğ·Ğ°Ğ¿Ğ¸ÑĞ¸ Ğ² Ñ„Ğ°Ğ¹Ğ»!" }
          WaitForOk('Error opening "'+FileToWrite+'"!','Ok',White+Red*16,White);
          LastKey:=K_ESC;
       end;
@@ -2192,7 +2192,7 @@ end;
 
 {***********************************************************************}
 Procedure ViewMemo(ColLeft,RowTop,ColRight,RowBottom:byte);
-{* ÄÄÄÄ Full Screen View ÄÄÄÄ}
+{* â”€â”€â”€â”€ Full Screen View â”€â”€â”€â”€}
 Var
    OldScreen:ScreenPtr;
    cKey:Char;
@@ -2612,7 +2612,7 @@ var
       DrawScale(12,19,'Listing to "'+cFileName+'"',LightRed,Yellow,LightGray);
 
       Writeln(nHandle,'==================== ',AreaBase,' Snipets List =====================');
-      Writeln(nHandle,'   (c) 1993-2001 by Valery Votintsev (rswag@sources.ru)');
+      Writeln(nHandle,'   (c) 1993-2001 by Valery Votintsev (rswag AT sources.ru)');
       Writeln(nHandle,'');
       Writeln(nHandle,'From                      Size    Subject');
       Writeln(nHandle,'------------------------- ------- --------------------------');
@@ -2740,7 +2740,7 @@ begin {Procedure MakeMsgList;} {New!}
    end; {If Lastkey <> K_ESC from Menu}
 end;
 
-{*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*}
+{*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*}
 Procedure ParseFidoAddress(S:String;Var cFrom,cAddr,cDate:String80);
 {--- Parse Address Line & Fill Address, Name & Subj Fields }
 Var
@@ -2760,7 +2760,7 @@ begin
 end;
 
 (* Old version
-{*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*}
+{*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*}
 Procedure ParseRelcomAddress(S:String;Var Name,Address,cFirstStr:String);
 {--- Parse Address Line & Fill Address and Name Fields }
 Const
@@ -2844,7 +2844,7 @@ Begin
 end;
 *)
 
-{*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*}
+{*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*}
 Procedure ParseRelcomAddress(S:String;Var Name,Address,cFirstStr:String);
 {--- Parse Address Line & Fill Address and Name Fields }
 Const
@@ -3380,7 +3380,7 @@ end;
 
 
 
-{*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*}
+{*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*}
 Procedure MoveCursor (cKey:Char);
 {Key handler for Msg/Area Lister}
 var
@@ -3514,7 +3514,7 @@ begin
    SAY(30,1,PadR(InsCommas(IntToStr(MemAvail)),12));
 
 
-   { ÜÜÜÜÜÜÜÜÜÜÜÜ Main loop ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ }
+   { â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„ Main loop â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„â–„ }
 
    While not Escaped do begin
 
@@ -3533,7 +3533,7 @@ begin
 end;
 
 
-{*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*}
+{*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*}
 Procedure CONFIG (ConfName:String);
 Var
    Conf:Text;
@@ -3632,7 +3632,7 @@ begin
    end else begin
       ConfigFile:=IniFile;
    end;
-   Config(ConfigFile); { ¢§ïâì ¯ à ¬¥âàë ­ áâà®©ª¨ ¨§ ä ©«  ª®­ä¨£ãà æ¨¨ }
+   Config(ConfigFile); { Ğ²Ğ·ÑÑ‚ÑŒ Ğ¿Ğ°Ñ€Ğ°Ğ¼ĞµÑ‚Ñ€Ñ‹ Ğ½Ğ°ÑÑ‚Ñ€Ğ¾Ğ¹ĞºĞ¸ Ğ¸Ğ· Ñ„Ğ°Ğ¹Ğ»Ğ° ĞºĞ¾Ğ½Ñ„Ğ¸Ğ³ÑƒÑ€Ğ°Ñ†Ğ¸Ğ¸ }
 
    BaseDir:=AllTrim(BaseDir);
    If BaseDir<>'' then

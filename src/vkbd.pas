@@ -28,8 +28,8 @@ const
    K_Space= #32;                    {Space}
    K_LeftSign  = '<';
    K_RightSign = '>';
-   K_LeftRus   = '';
-   K_RightRus  = '';
+   K_LeftRus   = 'Ğ‘';
+   K_RightRus  = 'Ğ®';
 
    K_Alt_A  = #30;                    {Alt-A}
    K_Alt_B  = #48;                    {Alt-B}
@@ -187,7 +187,7 @@ end;
 
 {***********************************************************************}
 Function EditBoxString (x1,y1,x2,y2:byte; cStr,cTitle,cLeftStr:string;ConverTo:ConvertType):string;
-{ ÄÄÄÄ Get the File Name ÄÄÄÄ }
+{ â”€â”€â”€â”€ Get the File Name â”€â”€â”€â”€ }
 var
    OldScreen:ScreenPtr;
    OldColor :byte;
@@ -280,7 +280,7 @@ begin
    repeat
 
       SAY(x,y,cStr);              {Display the work string}
-      fill_char(x+Length(cStr),y,'°',l-length(cStr)); {Display the work string}
+      fill_char(x+Length(cStr),y,'â–‘',l-length(cStr)); {Display the work string}
 
       GotoXY(Key_Pos+x-1, y);        {Go to current position in the string}
 
@@ -400,7 +400,7 @@ begin
    repeat
 
       SAY(x,y,cStr);              {Display the work string}
-{      fill_char(x+Length(cStr),y,'°',8-length(cStr)); {Display the work string}
+{      fill_char(x+Length(cStr),y,'â–‘',8-length(cStr)); {Display the work string}
 
       GotoXY(Key_Pos+x-1, y);        {Go to current position in the string}
 
@@ -474,25 +474,25 @@ end;
 
                                GS_KEYI_GETKEY
 
-     ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
-     º                                                                  º
-     º   The GS_KeyI_GetKey function is used to read a character from   º
-     º   Keyboard.  It can be called from any program.                  º
-     º                                                                  º
-     º       Calling the Function:                                      º
-     º                                                                  º
-     º           Ch := GS_KeyI_GetKey                                   º
-     º                                                                  º
-     º               ( where Ch is of type char. )                      º
-     º                                                                  º
-     º       Result:                                                    º
-     º                                                                  º
-     º           A character is returned.  If it is a function key,     º
-     º           GS_KeyI_Func is set true.  The character is also       º
-     º           saved in GS_KeyI_Chr, a global variable (just in       º
-     º           case it is needed at a later date)                     º
-     º                                                                  º
-     ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+     â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
+     â•‘                                                                  â•‘
+     â•‘   The GS_KeyI_GetKey function is used to read a character from   â•‘
+     â•‘   Keyboard.  It can be called from any program.                  â•‘
+     â•‘                                                                  â•‘
+     â•‘       Calling the Function:                                      â•‘
+     â•‘                                                                  â•‘
+     â•‘           Ch := GS_KeyI_GetKey                                   â•‘
+     â•‘                                                                  â•‘
+     â•‘               ( where Ch is of type char. )                      â•‘
+     â•‘                                                                  â•‘
+     â•‘       Result:                                                    â•‘
+     â•‘                                                                  â•‘
+     â•‘           A character is returned.  If it is a function key,     â•‘
+     â•‘           GS_KeyI_Func is set true.  The character is also       â•‘
+     â•‘           saved in GS_KeyI_Chr, a global variable (just in       â•‘
+     â•‘           case it is needed at a later date)                     â•‘
+     â•‘                                                                  â•‘
+     â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 
 }
 
@@ -548,37 +548,37 @@ end;
 
                                  EDITSTRING
 
-     ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
-     º                                                                  º
-     º   The EDITSTRING method will allow onscreen editing of a data    º
-     º   string.  It allows use of cursor keys and tabs as well.        º
-     º                                                                  º
-     º       Calling the Method:                                        º
-     º                                                                  º
-     º           objectname.EditString(St,x,y,lgth)                     º
-     º                                                                  º
-     º               ( where objectname is of type GS_KeyI_Objt         º
-     º                       St is a string default value,              º
-     º                       x is the screen column position to start,  º
-     º                       y is the screen row position to start,     º
-     º                       lgth is the maximum field length )         º
-     º                                                                  º
-     º       Result:                                                    º
-     º                                                                  º
-     º           An edited string is returned.  If Escape is pressed,   º
-     º           the original default value is returned.                º
-     º                                                                  º
-     ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+     â•”â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•—
+     â•‘                                                                  â•‘
+     â•‘   The EDITSTRING method will allow onscreen editing of a data    â•‘
+     â•‘   string.  It allows use of cursor keys and tabs as well.        â•‘
+     â•‘                                                                  â•‘
+     â•‘       Calling the Method:                                        â•‘
+     â•‘                                                                  â•‘
+     â•‘           objectname.EditString(St,x,y,lgth)                     â•‘
+     â•‘                                                                  â•‘
+     â•‘               ( where objectname is of type GS_KeyI_Objt         â•‘
+     â•‘                       St is a string default value,              â•‘
+     â•‘                       x is the screen column position to start,  â•‘
+     â•‘                       y is the screen row position to start,     â•‘
+     â•‘                       lgth is the maximum field length )         â•‘
+     â•‘                                                                  â•‘
+     â•‘       Result:                                                    â•‘
+     â•‘                                                                  â•‘
+     â•‘           An edited string is returned.  If Escape is pressed,   â•‘
+     â•‘           the original default value is returned.                â•‘
+     â•‘                                                                  â•‘
+     â•šâ•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 
 }
 {
-         ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-         ³  ********        Function Key Processor        *******   ³
-         ³                                                          ³
-         ³  This routine processes any function key that is pressed ³
-         ³  during edit mode.  If it is one ether insert is on or   ³
-         ³  off.  BIOS calls are used.                              ³
-         ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+         â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+         â”‚  ********        Function Key Processor        *******   â”‚
+         â”‚                                                          â”‚
+         â”‚  This routine processes any function key that is pressed â”‚
+         â”‚  during edit mode.  If it is one ether insert is on or   â”‚
+         â”‚  off.  BIOS calls are used.                              â”‚
+         â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
 }
 
 
@@ -609,12 +609,12 @@ begin
              if CPos <= Length(KeyI_Str) then
                 Delete(KeyI_Str, CPos, 1);
 {
-         ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-         ³  The following keys will simulate the Return key being   ³
-         ³  pressed.  The actual key pressed can be tested by the   ³
-         ³  calling program using the character in GS_KeyI_Chr,     ³
-         ³  using the Kbd_xxx constant values.                      ³
-         ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+         â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+         â”‚  The following keys will simulate the Return key being   â”‚
+         â”‚  pressed.  The actual key pressed can be tested by the   â”‚
+         â”‚  calling program using the character in GS_KeyI_Chr,     â”‚
+         â”‚  using the Kbd_xxx constant values.                      â”‚
+         â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
 }
    K_Tab,                  {Tab Key}
    K_Shift_Tab,            {Shift-Tab key}
@@ -638,15 +638,15 @@ begin
    end;
 end;
 {
-         ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-         ³  ********        Edit String Procedure         *******   ³
-         ³                                                          ³
-         ³  This is the main method to edit an input string.  The   ³
-         ³  usual cursor keys are processed through a method that   ³
-         ³  may be replaced by a child object's virtual method.     ³
-         ³  The Escape key will terminate and return the default    ³
-         ³  value to the calling program.                           ³
-         ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+         â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+         â”‚  ********        Edit String Procedure         *******   â”‚
+         â”‚                                                          â”‚
+         â”‚  This is the main method to edit an input string.  The   â”‚
+         â”‚  usual cursor keys are processed through a method that   â”‚
+         â”‚  may be replaced by a child object's virtual method.     â”‚
+         â”‚  The Escape key will terminate and return the default    â”‚
+         â”‚  value to the calling program.                           â”‚
+         â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
 }
 
 
@@ -676,25 +676,25 @@ begin
       begin
 
 {
-              ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-              ³  If this is the very first character to     ³
-              ³  be pressed, clear the work string first.   ³
-              ³  This allows editing of the work string     ³
-              ³  if cursor keys are used before a character ³
-              ³  is entered, or total replacement by        ³
-              ³  pressing a character key first.            ³
-              ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+              â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+              â”‚  If this is the very first character to     â”‚
+              â”‚  be pressed, clear the work string first.   â”‚
+              â”‚  This allows editing of the work string     â”‚
+              â”‚  if cursor keys are used before a character â”‚
+              â”‚  is entered, or total replacement by        â”‚
+              â”‚  pressing a character key first.            â”‚
+              â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
 }
 
          if First then KeyI_Str := '';
 {
-              ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
-              ³  If insert is on then insert the character. ³
-              ³  Otherwise, if at the end of the string,    ³
-              ³  just add the new character.  If insert is  ³
-              ³  off and not at the end of the string,      ³
-              ³  replace the existing character.            ³
-              ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+              â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+              â”‚  If insert is on then insert the character. â”‚
+              â”‚  Otherwise, if at the end of the string,    â”‚
+              â”‚  just add the new character.  If insert is  â”‚
+              â”‚  off and not at the end of the string,      â”‚
+              â”‚  replace the existing character.            â”‚
+              â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
 }
          if (KeyI_Ins) then Insert(Ch, KeyI_Str, CPos)
             else if CPos > Length(KeyI_Str) then

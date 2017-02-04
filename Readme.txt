@@ -12,4 +12,4 @@ gories covering  many aspects of PASCAL.
 
 Collected & issued by Valery Votintsev.
   FIDO:   2:5021/22
-  E-mail: rswag@sources.su
+  E-mail: rswag AT sources.su

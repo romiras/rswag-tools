@@ -164,8 +164,8 @@ begin
     i:=Pos('.',Name);
     If i>0 then Name[0]:=Chr(i-1);
 
-    Base.Assign(Name); {Øp®·¢Æ®‚Ï ÅÑ ®¨Ô}
-    Base.Init; {ØÆ§£Æ‚Æ¢®‚Ï·Ô ™ ·Æß§†≠®Ó ÅÑ}
+    Base.Assign(Name); {–øp–∏—Å–≤–æ–∏—Ç—å –ë–î –∏–º—è}
+    Base.Init; {–ø–æ–¥–≥–æ—Ç–æ–≤–∏—Ç—å—Å—è –∫ —Å–æ–∑–¥–∞–Ω–∏—é –ë–î}
 
     Base.AddField('FROM','C',25,0);
     Base.AddField('ADDR','C',25,0);
@@ -179,7 +179,7 @@ begin
     if Base.Create then
        Base.Open(ReadWrite)
     else begin
-       writeln('ç• ¨Æ£„ ·Æß§†‚Ï °†ß„ §†≠≠ÎÂ...');
+       writeln('–ù–µ –º–æ–≥—É —Å–æ–∑–¥–∞—Ç—å –±–∞–∑—É –¥–∞–Ω–Ω—ã—Ö...');
        exit;
     end;
 

@@ -3,7 +3,7 @@
 {                        v.4.1                             }
 {      Unit Reader_C - Common utilities for the READER     }
 {      written 1993-2001 by Valery Votintsev 2:5021/22     }
-{                             E-Mail: rswag@sources.ru     }
+{                          E-Mail: rswag AT sources.ru     }
 {----------------------------------------------------------}
 Unit RSWAGHTM;
 {$i GSF_FLAG.PAS}
@@ -37,7 +37,7 @@ Type
    end;
 
 Const
-  PgHeader = '<TR><TD class=page colspan=3 align=right>‘âà ­¨æë:&nbsp;&gt;&gt;&nbsp;<b>';
+  PgHeader = '<TR><TD class=page colspan=3 align=right>Ğ¡Ñ‚Ñ€Ğ°Ğ½Ğ¸Ñ†Ñ‹:&nbsp;&gt;&gt;&nbsp;<b>';
   PageFooter='</b></TD></TR>'#13#10;
 {
   NavFirst  ='<a href="$FIRST$.htm"><img border=0 src="../img/first.gif" alt="To First Src"></a>&nbsp;&nbsp;&nbsp;&nbsp;';
@@ -163,7 +163,7 @@ begin
 end;
 
 
-{*ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ*}
+{*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*}
 Procedure ReadAreaList (ConfName:String);
 Var
   FConf:Text;

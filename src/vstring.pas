@@ -1050,13 +1050,13 @@ begin
 end;
 
 
-{*ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ*}
+{*‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ*}
 Function Left(const S:String;n:byte):String;
 begin
    Left:=Copy(S,1,n);
 end;
 
-{*ƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒƒ*}
+{*‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ‚îÄ*}
 Function Right(const S:String;n:byte):String;
 Var
    i:byte;
@@ -1164,23 +1164,23 @@ Asm
         JMP     @1
         { -----------  Convert Russian Characters}
 @2:
-       CMP AL,'†'
+       CMP AL,'–∞'
        JB  @1
 
-       CMP AL,'Ø'
+       CMP AL,'–ø'
        JA  @3
-       AND AL,0DFH      { Convert chars "†°¢...Ø" }
+       AND AL,0DFH      { Convert chars "–∞–±–≤...–ø" }
         JMP     @1
 @3:
-       CMP AL,'‡'
+       CMP AL,'—Ä'
        JB  @1
 
-       CMP AL,'Ô'
+       CMP AL,'—è'
        JA  @4
-       SUB AL,050H      { Convert chars "‡·‚...Ô" }
+       SUB AL,050H      { Convert chars "—Ä—Å—Ç...—è" }
         JMP     @1
 @4:
-       CMP AL,'Ò'
+       CMP AL,'—ë'
        JNE @1
        DEC AL           { Convert e: -> E:        }
 @1:
@@ -1200,23 +1200,23 @@ Asm
         JMP     @1
         { -----------  Convert Russian Characters }
 @2:
-       CMP AL,'Ä'
+       CMP AL,'–ê'
        JB  @1
 
-       CMP AL,'è'
+       CMP AL,'–ü'
        JA  @3
-       ADD AL,20H      { Convert chars "†°¢...Ø" }
+       ADD AL,20H      { Convert chars "–∞–±–≤...–ø" }
         JMP     @1
 @3:
-       CMP AL,'ê'
+       CMP AL,'–†'
        JB  @1
 
-       CMP AL,'ü'
+       CMP AL,'–Ø'
        JA  @4
-       ADD AL,050H      { Convert chars "‡·‚...Ô" }
+       ADD AL,050H      { Convert chars "—Ä—Å—Ç...—è" }
         JMP     @1
 @4:
-       CMP AL,''
+       CMP AL,'–Å'
        JNE @1
        INC AL           { Convert E: -> e:  }
 @1:
@@ -1377,7 +1377,7 @@ begin
       l2 := ix;
       n:=l2-l1;
 
-      If (n >= 0) then begin {•·´® ®·™Æ¨†Ô ·‚‡Æ™† Ê•´®™Æ¨ „¨•È†•‚·Ô ¢ °„‰•‡•}
+      If (n >= 0) then begin {–µ—Å–ª–∏ –∏—Å–∫–æ–º–∞—è —Å—Ç—Ä–æ–∫–∞ —Ü–µ–ª–∏–∫–æ–º —É–º–µ—â–∞–µ—Ç—Å—è –≤ –±—É—Ñ–µ—Ä–µ}
          Inc(n);
          ix := 0;
          iy := 0;
